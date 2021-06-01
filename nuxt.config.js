@@ -44,7 +44,7 @@ export default {
   },
 
   publicRuntimeConfig: {
-    fileUrl: process.env.API_BASE_URL || 'https://18.168.216.238',
+    fileUrl: process.env.API_BASE_URL || 'http://18.168.216.238',
   },
 
   // Global CSS: https://go.nuxtjs.dev/config-css
