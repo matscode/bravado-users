@@ -43,10 +43,10 @@ export const actions = {
     return this.$axios
       .$get('/users.json')
       .then((r) => {
-        const testChunk = r.slice(0, 50)
+        // const r = r.slice(0, 50)
 
-        commit('SAVE_USERS_TO_STORE', testChunk)
-        commit('UPDATE_USERS', testChunk)
+        commit('SAVE_USERS_TO_STORE', r)
+        commit('UPDATE_USERS', r)
 
         return r.data
       })
