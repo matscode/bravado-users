@@ -40,7 +40,7 @@ jobs:
       - name: Executing remote ssh commands
         uses: appleboy/ssh-action@master
         env:
-          NODE_ENV: production
+          NODE_ENV: development
         with:
           host: ${{ secrets.SERVER }}
           username: ${{ secrets.USER }}
@@ -50,5 +50,5 @@ jobs:
           envs: 'NODE_ENV'
           script: |
             cd ~/stack/projects/bravado
-            yarn --non-interactive --production=true
+            yarn
             yarn build
