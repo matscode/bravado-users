@@ -1,1 +1,1 @@
-web: npm run generate && npx http-server dist
+web: npm run dev
