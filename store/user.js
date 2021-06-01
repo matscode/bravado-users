@@ -48,7 +48,7 @@ export const actions = {
         commit('SAVE_USERS_TO_STORE', r)
         commit('UPDATE_USERS', r)
 
-        return r.data
+        return r
       })
       .catch(() => {
         //  silence
