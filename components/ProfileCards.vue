@@ -6,6 +6,12 @@ export default {
   name: 'ProfileCards',
   mixins: [Basic],
 
+  methods: {
+    markAsSuitable(index) {
+      this.users[index].isSuitable = true
+    },
+  },
+
   render(createElement, context) {
     return (
       <section class="profile-cards-container">
@@ -25,7 +31,7 @@ export default {
           <ul class="profile-cards list-unstyled">
             <RecycleScroller
               scopedSlots={{
-                default: ({ item: user }) => {
+                default: ({ item: user, index }) => {
                   return (
                     <li key={user.email} class="list-item profile-card d-flex">
                       <div>
@@ -52,7 +58,16 @@ export default {
                           href="#"
                           class="text-uppercase text-success d-block mt-auto mt-sm-3"
                         >
-                          <h6 class="">Mark as Suitable</h6>
+                          {user.isSuitable ? (
+                            <h6 className="">Skip Selection</h6>
+                          ) : (
+                            <a
+                              href="#"
+                              onClick={() => this.markAsSuitable(index)}
+                            >
+                              <h6 class="">Mark as Suitable</h6>
+                            </a>
+                          )}
                         </a>
                       </div>
                     </li>

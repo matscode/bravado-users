@@ -14,7 +14,7 @@ $ yarn generate
 $ yarn start
 ```
 
-## Third Libraries
+## Third party Libraries
 - Vue Virtual Scroller : https://github.com/Akryum/vue-virtual-scroller
 - Lodash : Javascript utility library. usage of `debounce`
 
